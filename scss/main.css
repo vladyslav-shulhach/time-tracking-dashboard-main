@@ -1,1 +1,51 @@
-/*# sourceMappingURL=main.css.map */
+/* Apply box-sizing border-box to all elements and their pseudo-elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default list styles for unordered and ordered lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Inherit font and remove default styles for form elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Set cursor to pointer for anchor and button elements */
+a,
+button {
+  cursor: pointer;
+}
+
+/* Remove default text decoration and inherit color for anchor elements */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ensure images and picture elements are responsive and block-level */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove border-radius and set background to transparent for input and textarea */
+input,
+textarea {
+  border-radius: 0;
+  background: transparent;
+}/*# sourceMappingURL=main.css.map */
