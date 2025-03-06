@@ -48,4 +48,162 @@ input,
 textarea {
   border-radius: 0;
   background: transparent;
+}
+
+body {
+  background-color: hsl(226, 43%, 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  margin-top: 5rem;
+  width: 20.5rem;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  color: hsl(236, 100%, 87%);
+}
+
+button {
+  color: hsl(235, 45%, 61%);
+}
+
+[aria-selected=true] {
+  color: hsl(0, 0%, 100%);
+}
+
+.category__time {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.category__previous-time {
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: hsl(236, 100%, 87%);
+}
+
+.profile,
+.category {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.profile {
+  background-color: hsl(235, 46%, 20%);
+}
+.profile__info {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 14px;
+  display: flex;
+  padding: 1.875rem 1.75rem;
+  gap: 10px;
+}
+.profile__image {
+  width: 4rem;
+  height: 4rem;
+  padding: 2px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+}
+.profile__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.profile__navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation__list {
+  padding: 1.625rem;
+  display: flex;
+  gap: 3.5rem;
+}
+
+.category {
+  height: 10rem;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.category__banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}
+.category__icon {
+  position: absolute;
+}
+.category__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: hsl(235, 46%, 20%);
+  padding: 1.875rem 1.75rem;
+  z-index: 2;
+  border-radius: 14px 14px 0 0;
+  margin-bottom: -2px;
+}
+.category__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category__time-monitor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category--work {
+  background-color: hsl(15, 100%, 70%);
+}
+
+.category--play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+.category--study {
+  background-color: hsl(348, 100%, 68%);
+}
+
+.category--exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+
+.category--social {
+  background-color: hsl(264, 64%, 52%);
+}
+
+.category--self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

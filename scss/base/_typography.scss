@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+
+body {
+  font-family: $font-family-rubik;
+  color: $color-white;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  color: $color-pale-blue;
+}
+button {
+  color: $color-desaturated-blue;
+}
+
+[aria-selected="true"] {
+  color: $color-white;
+}
+
+.category__time {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.category__previous-time {
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: $color-pale-blue;
+}

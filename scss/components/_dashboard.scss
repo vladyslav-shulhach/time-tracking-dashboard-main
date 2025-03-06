@@ -1,0 +1,117 @@
+@use "../abstracts/variables" as *;
+
+.profile,
+.category {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+// Profile
+.profile {
+  background-color: $color-dark-blue;
+  &__info {
+    background-color: $color-profile;
+    border-radius: 14px;
+    display: flex;
+    padding: 1.875rem 1.75rem;
+    gap: 10px;
+  }
+
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.navigation {
+  &__list {
+    padding: 1.625rem;
+    display: flex;
+    gap: 3.5rem;
+  }
+}
+
+// Category
+.category {
+  height: 10rem;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+
+  &__banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; // Adjust based on design
+    z-index: 1;
+  }
+
+  &__icon {
+    position: absolute;
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-dark-blue;
+    padding: 1.875rem 1.75rem;
+    z-index: 2;
+    border-radius: 14px 14px 0 0;
+    margin-bottom: -2px; // Fixes 1px gap issue
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__time-monitor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Banners
+.category--work {
+  background-color: $color-work;
+}
+
+.category--play {
+  background-color: $color-play;
+}
+
+.category--study {
+  background-color: $color-study;
+}
+
+.category--exercise {
+  background-color: $color-exercise;
+}
+
+.category--social {
+  background-color: $color-social;
+}
+
+.category--self-care {
+  background-color: $color-self-care;
+}
