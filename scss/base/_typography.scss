@@ -36,3 +36,11 @@ button {
   font-weight: 100;
   color: $color-pale-blue;
 }
+
+footer {
+  font-size: 11px;
+  a {
+    color: $color-pale-blue;
+    text-decoration: underline;
+  }
+}

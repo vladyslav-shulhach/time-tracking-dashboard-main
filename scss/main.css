@@ -57,9 +57,19 @@ body {
   align-items: center;
 }
 
+main,
+footer {
+  width: 20.5rem;
+}
+
 main {
   margin-top: 5rem;
-  width: 20.5rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 body {
@@ -100,6 +110,14 @@ button {
   color: hsl(236, 100%, 87%);
 }
 
+footer {
+  font-size: 11px;
+}
+footer a {
+  color: hsl(236, 100%, 87%);
+  text-decoration: underline;
+}
+
 .profile,
 .category {
   border-radius: 14px;
@@ -122,6 +140,16 @@ button {
   padding: 2px;
   border-radius: 50%;
   background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 .profile__description {
   display: flex;
