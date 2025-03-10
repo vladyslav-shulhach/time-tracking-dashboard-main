@@ -84,6 +84,8 @@
 
   &__icon {
     position: absolute;
+    right: 1rem;
+    top: -0.5rem;
   }
 
   &__info {
@@ -143,25 +145,51 @@
 }
 
 @media (min-width: $desktop-width) {
-  .dashboard {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.875rem;
-    &__profile {
-      width: 16rem;
-    }
-    &__categories {
-      grid-template-columns: repeat(3, 1fr);
+  @media (min-width: $desktop-width) {
+    .dashboard {
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.875rem;
-      .category {
-        width: 16rem;
-        height: 15.125rem;
-      }
-    }
-  }
 
-  .navigation {
-    &__list {
-      flex-direction: column;
+      &__profile {
+        width: 16rem;
+        .profile__info {
+          height: 60%;
+          flex-direction: column;
+        }
+      }
+
+      &__categories {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+
+        .category {
+          width: 16rem;
+          height: 15.125rem;
+
+          &__banner {
+            height: 20%;
+          }
+
+          &__info {
+            height: 80%;
+          }
+
+          &__time-monitor {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+          }
+        }
+      }
+
+      .profile__navigation {
+        justify-content: flex-start;
+        .navigation__list {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
     }
   }
 }

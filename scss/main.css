@@ -140,6 +140,52 @@ footer a {
   text-decoration: underline;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+  .category__time {
+    font-size: 2.5rem;
+  }
+  .category__previous-time {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.5rem;
+  }
+  .category__time {
+    font-size: 3.5rem;
+  }
+  .category__previous-time {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 14px;
+  }
+}
 .profile,
 .category {
   border-radius: 14px;
@@ -216,6 +262,8 @@ footer a {
 }
 .category__icon {
   position: absolute;
+  right: 1rem;
+  top: -0.5rem;
 }
 .category__info {
   position: absolute;
@@ -268,13 +316,17 @@ footer a {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1440px) and (min-width: 1440px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.875rem;
   }
   .dashboard__profile {
     width: 16rem;
+  }
+  .dashboard__profile .profile__info {
+    height: 60%;
+    flex-direction: column;
   }
   .dashboard__categories {
     grid-template-columns: repeat(3, 1fr);
@@ -284,7 +336,23 @@ footer a {
     width: 16rem;
     height: 15.125rem;
   }
-  .navigation__list {
+  .dashboard__categories .category__banner {
+    height: 20%;
+  }
+  .dashboard__categories .category__info {
+    height: 80%;
+  }
+  .dashboard__categories .category__time-monitor {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .dashboard .profile__navigation {
+    justify-content: flex-start;
+  }
+  .dashboard .profile__navigation .navigation__list {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }/*# sourceMappingURL=main.css.map */
