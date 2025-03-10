@@ -6,6 +6,16 @@
   overflow: hidden;
 }
 
+.dashboard {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 5rem;
+  &__categories {
+    display: grid;
+    gap: 1.5rem;
+  }
+}
+
 // Profile
 .profile {
   background-color: $color-dark-blue;
@@ -124,4 +134,34 @@
 
 .category--self-care {
   background-color: $color-self-care;
+}
+
+@media (min-width: $tablet-width) {
+  .dashboard__categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+    &__profile {
+      width: 16rem;
+    }
+    &__categories {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.875rem;
+      .category {
+        width: 16rem;
+        height: 15.125rem;
+      }
+    }
+  }
+
+  .navigation {
+    &__list {
+      flex-direction: column;
+    }
+  }
 }

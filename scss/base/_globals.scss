@@ -21,3 +21,29 @@ footer {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
+
+@media (min-width: $tablet-width) {
+  main,
+  footer {
+    width: 37.5rem;
+  }
+
+  main {
+    margin-top: 6rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  body {
+    height: 100vh;
+    justify-content: center;
+  }
+  main {
+    width: 69.5rem;
+  }
+}
