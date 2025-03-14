@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const categories = document.querySelectorAll(".category");
   const buttons = document.querySelectorAll("[data-timeframe]");
   let timeframe = "daily"; // Default timeframe
 
@@ -13,9 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
         category.querySelector(
           ".category__time"
         ).textContent = `${item.timeframes[timeframe].current} hrs`;
-        category.querySelector(
-          ".category__previous-time"
-        ).textContent = `Previous - ${item.timeframes[timeframe].previous} hrs`;
+
+        // Dynamically set previous time description
+        const previousTextMap = {
+          daily: "Yesterday",
+          weekly: "Last Week",
+          monthly: "Last Month",
+        };
+
+        const previousTimeText = `${previousTextMap[timeframe]} - ${item.timeframes[timeframe].previous} hrs`;
+        category.querySelector(".category__previous-time").textContent =
+          previousTimeText;
       }
     });
   };
