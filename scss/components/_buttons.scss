@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+.profile__navigation button {
+  padding: 1.5rem;
+  transition: 200ms ease-out;
+  &:hover {
+    color: $color-pale-blue;
+    transition: 200ms ease-out;
+  }
+  &[aria-selected="true"] {
+    color: $color-white;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .profile__navigation button {
+    padding: 0;
+    font-size: $font-size-body;
+  }
+}

@@ -60,9 +60,9 @@
 
 .navigation {
   &__list {
-    padding: 1.625rem;
+    width: 100%;
     display: flex;
-    gap: 3.5rem;
+    justify-content: space-around;
   }
 }
 
@@ -98,12 +98,19 @@
     z-index: 2;
     border-radius: 14px 14px 0 0;
     margin-bottom: -2px; // Fixes 1px gap issue
+    transition: 200ms ease-out;
+
+    &:hover {
+      background-color: hsl(236, 41%, 34%);
+      transition: 200ms ease-out;
+    }
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5rem;
   }
 
   &__time-monitor {
@@ -142,53 +149,85 @@
   .dashboard__categories {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .category {
+    height: 12.5rem;
+  }
+
+  .category__time-monitor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: $desktop-width) {
-  @media (min-width: $desktop-width) {
-    .dashboard {
-      grid-template-columns: repeat(2, 1fr);
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+
+    &__profile {
+      width: 16rem;
+      .profile__info {
+        height: 60%;
+        flex-direction: column;
+      }
+    }
+
+    &__categories {
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.875rem;
 
-      &__profile {
+      .category {
         width: 16rem;
-        .profile__info {
-          height: 60%;
+        height: 15.125rem;
+
+        &__banner {
+          height: 20%;
+        }
+
+        &__info {
+          height: 80%;
+        }
+
+        &__time-monitor {
           flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          margin-top: 1.2rem;
         }
       }
+    }
 
-      &__categories {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.875rem;
+    .profile__info {
+      height: 67.5%;
+    }
 
-        .category {
-          width: 16rem;
-          height: 15.125rem;
+    .profile__image {
+      width: 5.25rem;
+      height: 5.25rem;
+    }
 
-          &__banner {
-            height: 20%;
-          }
+    .profile__description {
+      margin-top: 2.375rem;
+    }
 
-          &__info {
-            height: 80%;
-          }
-
-          &__time-monitor {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-top: 1.2rem;
+    .profile__navigation {
+      justify-content: center;
+      align-items: center;
+      .navigation__list {
+        padding: 1.75rem 2rem;
+        //Set buttons to full width to ease clicking
+        li {
+          width: 100%;
+          button {
+            width: 100%;
+            text-align: left;
           }
         }
-      }
-
-      .profile__navigation {
-        justify-content: flex-start;
-        .navigation__list {
-          flex-direction: column;
-          gap: 1.5rem;
-        }
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
       }
     }
   }

@@ -151,7 +151,7 @@ footer a {
     font-size: 1rem;
   }
   button {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .category__time {
     font-size: 2.5rem;
@@ -176,14 +176,38 @@ footer a {
   button {
     font-size: 1.5rem;
   }
+  .category__header {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
   .category__time {
     font-size: 3.5rem;
+    font-weight: 300;
   }
   .category__previous-time {
     font-size: 1rem;
+    font-weight: 300;
   }
   footer {
     font-size: 14px;
+  }
+}
+.profile__navigation button {
+  padding: 1.5rem;
+  transition: 200ms ease-out;
+}
+.profile__navigation button:hover {
+  color: hsl(236, 100%, 87%);
+  transition: 200ms ease-out;
+}
+.profile__navigation button[aria-selected=true] {
+  color: hsl(0, 0%, 100%);
+}
+
+@media (min-width: 1440px) {
+  .profile__navigation button {
+    padding: 0;
+    font-size: 18px;
   }
 }
 .profile,
@@ -241,9 +265,9 @@ footer a {
 }
 
 .navigation__list {
-  padding: 1.625rem;
+  width: 100%;
   display: flex;
-  gap: 3.5rem;
+  justify-content: space-around;
 }
 
 .category {
@@ -275,11 +299,17 @@ footer a {
   z-index: 2;
   border-radius: 14px 14px 0 0;
   margin-bottom: -2px;
+  transition: 200ms ease-out;
+}
+.category__info:hover {
+  background-color: hsl(236, 41%, 34%);
+  transition: 200ms ease-out;
 }
 .category__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 .category__time-monitor {
   display: flex;
@@ -315,8 +345,15 @@ footer a {
   .dashboard__categories {
     grid-template-columns: repeat(2, 1fr);
   }
+  .category {
+    height: 12.5rem;
+  }
+  .category__time-monitor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
-@media (min-width: 1440px) and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.875rem;
@@ -348,11 +385,32 @@ footer a {
     gap: 0.5rem;
     margin-top: 1.2rem;
   }
+  .dashboard .profile__info {
+    height: 67.5%;
+  }
+  .dashboard .profile__image {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+  .dashboard .profile__description {
+    margin-top: 2.375rem;
+  }
   .dashboard .profile__navigation {
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
   }
   .dashboard .profile__navigation .navigation__list {
+    padding: 1.75rem 2rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
+  }
+  .dashboard .profile__navigation .navigation__list li {
+    width: 100%;
+  }
+  .dashboard .profile__navigation .navigation__list li button {
+    width: 100%;
+    text-align: left;
   }
 }/*# sourceMappingURL=main.css.map */
