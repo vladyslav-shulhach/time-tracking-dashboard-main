@@ -225,6 +225,44 @@ footer a {
   display: grid;
   gap: 1.5rem;
 }
+@media (min-width: 768px) {
+  .dashboard__categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1440px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+  }
+  .dashboard__profile {
+    width: 16rem;
+  }
+  .dashboard__profile .profile__info {
+    height: 60%;
+    flex-direction: column;
+  }
+  .dashboard__categories {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875rem;
+  }
+  .dashboard__categories .category {
+    width: 16rem;
+    height: 15.125rem;
+  }
+  .dashboard__categories .category__banner {
+    height: 20%;
+  }
+  .dashboard__categories .category__info {
+    height: 80%;
+  }
+  .dashboard__categories .category__time-monitor {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+}
 
 .profile {
   background-color: hsl(235, 46%, 20%);
@@ -235,6 +273,11 @@ footer a {
   display: flex;
   padding: 1.875rem 1.75rem;
   gap: 10px;
+}
+@media (min-width: 1440px) {
+  .profile__info {
+    height: 67.5%;
+  }
 }
 .profile__image {
   width: 4rem;
@@ -253,21 +296,54 @@ footer a {
      object-fit: cover;
   border-radius: 50%;
 }
+@media (min-width: 1440px) {
+  .profile__image {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+}
 .profile__description {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.3rem;
+  height: 100%;
+}
+@media (min-width: 1440px) {
+  .profile__description {
+    margin-top: 2.375rem;
+  }
 }
 .profile__navigation {
   display: flex;
   justify-content: center;
+}
+@media (min-width: 1440px) {
+  .profile__navigation {
+    justify-content: center;
+    align-items: center;
+  }
+  .profile__navigation .navigation__list {
+    padding: 1.75rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .profile__navigation .navigation__list li {
+    width: 100%;
+  }
+  .profile__navigation .navigation__list li button {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .navigation__list {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .category {
@@ -316,6 +392,26 @@ footer a {
   justify-content: space-between;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .category__time-monitor {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.category__options {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+}
+.category__options:hover {
+  color: hsl(236, 100%, 87%);
+}
+@media (min-width: 768px) {
+  .category {
+    height: 12.5rem;
+  }
+}
 
 .category--work {
   background-color: hsl(15, 100%, 70%);
@@ -339,78 +435,4 @@ footer a {
 
 .category--self-care {
   background-color: hsl(43, 84%, 65%);
-}
-
-@media (min-width: 768px) {
-  .dashboard__categories {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .category {
-    height: 12.5rem;
-  }
-  .category__time-monitor {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-@media (min-width: 1440px) {
-  .dashboard {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.875rem;
-  }
-  .dashboard__profile {
-    width: 16rem;
-  }
-  .dashboard__profile .profile__info {
-    height: 60%;
-    flex-direction: column;
-  }
-  .dashboard__categories {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.875rem;
-  }
-  .dashboard__categories .category {
-    width: 16rem;
-    height: 15.125rem;
-  }
-  .dashboard__categories .category__banner {
-    height: 20%;
-  }
-  .dashboard__categories .category__info {
-    height: 80%;
-  }
-  .dashboard__categories .category__time-monitor {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: 1.2rem;
-  }
-  .dashboard .profile__info {
-    height: 67.5%;
-  }
-  .dashboard .profile__image {
-    width: 5.25rem;
-    height: 5.25rem;
-  }
-  .dashboard .profile__description {
-    margin-top: 2.375rem;
-  }
-  .dashboard .profile__navigation {
-    justify-content: center;
-    align-items: center;
-  }
-  .dashboard .profile__navigation .navigation__list {
-    padding: 1.75rem 2rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .dashboard .profile__navigation .navigation__list li {
-    width: 100%;
-  }
-  .dashboard .profile__navigation .navigation__list li button {
-    width: 100%;
-    text-align: left;
-  }
 }/*# sourceMappingURL=main.css.map */

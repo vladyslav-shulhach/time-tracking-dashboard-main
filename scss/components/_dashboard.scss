@@ -10,21 +10,72 @@
   display: grid;
   gap: 1.5rem;
   margin-top: 5rem;
+
   &__categories {
     display: grid;
     gap: 1.5rem;
+  }
+
+  @media (min-width: $tablet-width) {
+    &__categories {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.875rem;
+
+    &__profile {
+      width: 16rem;
+
+      .profile__info {
+        height: 60%;
+        flex-direction: column;
+      }
+    }
+
+    &__categories {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.875rem;
+
+      .category {
+        width: 16rem;
+        height: 15.125rem;
+
+        &__banner {
+          height: 20%;
+        }
+
+        &__info {
+          height: 80%;
+        }
+
+        &__time-monitor {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+          margin-top: 1.2rem;
+        }
+      }
+    }
   }
 }
 
 // Profile
 .profile {
   background-color: $color-dark-blue;
+
   &__info {
     background-color: $color-profile;
     border-radius: 14px;
     display: flex;
     padding: 1.875rem 1.75rem;
     gap: 10px;
+
+    @media (min-width: $desktop-width) {
+      height: 67.5%;
+    }
   }
 
   &__image {
@@ -43,6 +94,11 @@
       object-fit: cover;
       border-radius: 50%;
     }
+
+    @media (min-width: $desktop-width) {
+      width: 5.25rem;
+      height: 5.25rem;
+    }
   }
 
   &__description {
@@ -50,11 +106,38 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.3rem;
+    height: 100%; // Increase height
+
+    @media (min-width: $desktop-width) {
+      margin-top: 2.375rem;
+    }
   }
 
   &__navigation {
     display: flex;
     justify-content: center;
+
+    @media (min-width: $desktop-width) {
+      justify-content: center;
+      align-items: center;
+
+      .navigation__list {
+        padding: 1.75rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        li {
+          width: 100%;
+
+          button {
+            width: 100%;
+            text-align: left;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -63,6 +146,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center; // Ensure alignment
   }
 }
 
@@ -101,7 +185,7 @@
     transition: 200ms ease-out;
 
     &:hover {
-      background-color: hsl(236, 41%, 34%);
+      background-color: $color-hover-dark-blue;
       transition: 200ms ease-out;
     }
   }
@@ -117,6 +201,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: $tablet-width) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__options {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 200ms ease-out;
+
+    &:hover {
+      color: $color-pale-blue;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 12.5rem;
   }
 }
 
@@ -143,92 +247,4 @@
 
 .category--self-care {
   background-color: $color-self-care;
-}
-
-@media (min-width: $tablet-width) {
-  .dashboard__categories {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .category {
-    height: 12.5rem;
-  }
-
-  .category__time-monitor {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (min-width: $desktop-width) {
-  .dashboard {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.875rem;
-
-    &__profile {
-      width: 16rem;
-      .profile__info {
-        height: 60%;
-        flex-direction: column;
-      }
-    }
-
-    &__categories {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.875rem;
-
-      .category {
-        width: 16rem;
-        height: 15.125rem;
-
-        &__banner {
-          height: 20%;
-        }
-
-        &__info {
-          height: 80%;
-        }
-
-        &__time-monitor {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.5rem;
-          margin-top: 1.2rem;
-        }
-      }
-    }
-
-    .profile__info {
-      height: 67.5%;
-    }
-
-    .profile__image {
-      width: 5.25rem;
-      height: 5.25rem;
-    }
-
-    .profile__description {
-      margin-top: 2.375rem;
-    }
-
-    .profile__navigation {
-      justify-content: center;
-      align-items: center;
-      .navigation__list {
-        padding: 1.75rem 2rem;
-        //Set buttons to full width to ease clicking
-        li {
-          width: 100%;
-          button {
-            width: 100%;
-            text-align: left;
-          }
-        }
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-      }
-    }
-  }
 }
