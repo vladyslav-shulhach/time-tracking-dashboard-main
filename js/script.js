@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  // Function to handle errors
+  const handleError = (error) => {
+    console.error("Error loading JSON data:", error);
+  };
+
   // Fetch JSON data and update dashboard
   fetch("data.json")
     .then((response) => response.json())
@@ -52,5 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     })
-    .catch((error) => console.error("Error loading JSON data:", error));
+    .catch(handleError);
 });
