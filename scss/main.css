@@ -239,7 +239,6 @@ footer a {
     width: 16rem;
   }
   .dashboard__profile .profile__info {
-    height: 60%;
     flex-direction: column;
   }
   .dashboard__categories {
