@@ -32,8 +32,8 @@ Here is a screenshot of the project displayed on a desktop screen.
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here](https://your-solution-url.com)
+- Live Site URL: [here](https://time-tracking-dashboard-main-five-nu.vercel.app/)
 
 ## My process
 
