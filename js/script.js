@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to format hours correctly
   const formatHours = (hours) => `${hours} ${hours === 1 ? "hr" : "hrs"}`;
 
+  // Function to convert hours to ISO 8601 duration format
+  const hoursToISO = (hours) => `PT${hours}H`;
+
   // Function to update the dashboard with data
   const updateDashboard = (data) => {
     data.forEach((item) => {
@@ -17,21 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentHours = item.timeframes[timeframe].current;
         const previousHours = item.timeframes[timeframe].previous;
 
+        // Update text content
         category.querySelector(".category__time").textContent =
           formatHours(currentHours);
+        category.querySelector(".category__previous-time").textContent = `${
+          {
+            daily: "Yesterday",
+            weekly: "Last Week",
+            monthly: "Last Month",
+          }[timeframe]
+        } - ${formatHours(previousHours)}`;
 
-        // Dynamically set previous time description
-        const previousTextMap = {
-          daily: "Yesterday",
-          weekly: "Last Week",
-          monthly: "Last Month",
-        };
-
-        const previousTimeText = `${previousTextMap[timeframe]} - ${formatHours(
-          previousHours
-        )}`;
-        category.querySelector(".category__previous-time").textContent =
-          previousTimeText;
+        // Update datetime attributes
+        category
+          .querySelector(".category__time")
+          .setAttribute("datetime", hoursToISO(currentHours));
+        category
+          .querySelector(".category__previous-time")
+          .setAttribute("datetime", hoursToISO(previousHours));
       }
     });
   };
