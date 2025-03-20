@@ -1,6 +1,6 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor provides a variety of challenges to help developers practice and improve their coding skills by working on real-world projects. This challenge was a great opportunity to improve my HTML, CSS, JavaScript and responsive design abilities.
 
 ## Table of contents
 
@@ -12,7 +12,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -27,7 +26,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Here is a screenshot of the project displayed on a desktop screen.
+
+![](./preview.png)
 
 ### Links
 
@@ -43,12 +44,12 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- JavaScript
 - SCSS
+- JavaScript
 
 ### What I learned
 
-### **1. Fetching Data with `fetch`**
+**1. Fetching Data with `fetch`**
 
 I learned how to fetch and manipulate data dynamically using JavaScript. Instead of hardcoding the time tracking values directly into the HTML, I used the `fetch()` method to retrieve data from a JSON file. This approach makes the dashboard flexible and easier to maintain, as updates to the data can be handled without modifying the HTML structure.
 
@@ -63,7 +64,7 @@ fetch("data.json")
 
 The `response.json()` method converts the raw JSON data into a JavaScript object, which is then used to dynamically populate the dashboard.
 
-### **2. Updating the Dashboard Dynamically**
+**2. Updating the Dashboard Dynamically**
 
 The `updateDashboard(data)` function dynamically updates the dashboard based on the selected timeframe (`daily`, `weekly`, or `monthly`). Each category is identified using a `data-category` attribute, which matches the activity title in the JSON data. For example:
 
@@ -85,7 +86,7 @@ category.querySelector(".category__previous-time").textContent = `${
 } - ${formatHours(item.timeframes[timeframe].previous)}`;
 ```
 
-### **3. Handling Timeframe Switching**
+**3. Handling Timeframe Switching**
 
 To allow users to switch between timeframes, I added event listeners to the timeframe buttons. When a button is clicked, the `timeframe` variable is updated, and the dashboard is refreshed:
 
@@ -100,7 +101,7 @@ buttons.forEach((button) => {
 });
 ```
 
-### **4. Formatting Hours**
+**4. Formatting Hours**
 
 To ensure proper grammar when displaying hours, I created a utility function called `formatHours`:
 
@@ -110,7 +111,7 @@ const formatHours = (hours) => `${hours} ${hours === 1 ? "hr" : "hrs"}`;
 
 This function ensures that "hr" is used for singular values and "hrs" for plural values, improving the readability of the dashboard.
 
-### **5. Error Handling**
+**5. Error Handling**
 
 To handle potential issues when fetching data, I implemented a custom error handler:
 
@@ -126,8 +127,6 @@ This ensures that any errors during the fetch process are logged clearly in the 
 
 In future projects, I aim to focus on improving accessibility, optimizing performance for larger datasets, and exploring advanced state management techniques in JavaScript frameworks.
 
-### Useful resources
-
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [Vladyslav Shulhach](https://www.frontendmentor.io/profile/vladyslav-shulhach)
